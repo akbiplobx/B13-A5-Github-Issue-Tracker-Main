@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Page</title>
+    <!-- fav-icon -->
+    <link rel="shortcut icon" href="./image/fav-icon.png">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- tailwind+daisy -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- responsive -->
+    <link rel="stylesheet" href="./responsive.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 w-full max-w-md shadow-lg rounded-2xl">
+               <div class="text-center mb-8">
+                     <img src="./image/github-logo.png" alt="" class="w-12 h-12 mx-auto mb-3 ">
+            <h2 class="text-2xl font-bold text-gray-800">GitHub Issues Tracker</h2>
+            <p class="text-gray-500">Sign in to manage your issues</p>
+        </div>
+        <div class="space-y-4">
+            <div>
+                <label class="block font-bold text-gray-700 mb-1">Username</label>
+                <input id="username" type="text" placeholder="Enter Username" class="w-full border-2 border-gray-200 p-2 rounded focus:border-blue-500 outline-none">
+                <p class="text-blue-600 text-xs mt-1">Default: admin</p>
+            </div>
+            <div>
+                <label class="block font-bold text-gray-700 mb-1">Password</label>
+                <input id="password" type="password" placeholder="Enter Password" class="w-full border-2 border-gray-200 p-2 rounded focus:border-blue-500 outline-none">
+                <p class="text-blue-600 text-xs mt-1">Default: admin123</p>
+            </div>
+            <button onclick="login()" class="w-full bg-blue-600 text-white py-3 rounded-md font-bold hover:bg-blue-700 cursor-pointer">
+                Sign In
+            </button>
+        </div>
+        <div class="flex items-center my-6">
+            <div class="flex-grow border-t border-gray-300"></div>
+            <span class="px-3 text-gray-400 text-sm italic">OR</span>
+            <div class="flex-grow border-t border-gray-300"></div>
+        </div>
+        <div class="bg-gray-50 p-4 rounded text-center">
+            <p class="text-gray-400 text-sm mb-2 italic">Demo Credentials:</p>
+            <p class="text-gray-700"><b>Username:</b> admin</p>
+            <p class="text-gray-700"><b>Password:</b> admin123</p>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
