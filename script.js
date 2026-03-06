@@ -1,4 +1,4 @@
-
+// login function start
 function login() {
     const user = document.getElementById('username').value;
     const pass = document.getElementById('password').value;
@@ -8,3 +8,4 @@ function login() {
         alert("Wrong username or password. Try again");
     }
 }
+// login function end
