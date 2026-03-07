@@ -139,12 +139,12 @@ function openModal(card) {
 
     <div class="bg-slate-50 p-6 rounded-xl flex justify-between items-center">
       <div>
-        <p class="text-slate-400 text-xs mb-1 uppercase tracking-wider">Assignee:</p>
+        <p class="text-slate-400 text-xs mb-1 ">Assignee:</p>
         <p class="font-bold text-slate-800">${card.author}</p>
       </div>
       <div class="text-right">
-        <p class="text-slate-400 text-xs mb-1 uppercase tracking-wider">Priority:</p>
-        <span class="bg-red-500 text-white px-4 py-1 rounded text-xs font-bold uppercase">${card.priority}</span>
+        <p class="text-slate-400 text-xs mb-1 ">Priority:</p>
+        <span class="bg-red-500 text-white px-4 py-1 rounded-4xl text-xs font-bold uppercase">${card.priority}</span>
       </div>
     </div>
   `;
