@@ -32,6 +32,10 @@ function displayCards(cards){
 
     const div = document.createElement("div");
 
+    // --------------------popup-------------
+    div.onclick = () => openModal(card); 
+    div.className = "cursor-pointer";
+    // ---------------------------------------
       const statusImg = card.status === "open" 
       ? "./image/Open-Status.png"
       : "./image/Closed-Status.png";
@@ -112,4 +116,39 @@ function showClosed(){
   const filtered = allIssues.filter(card => card.status === "closed");
   displayCards(filtered);
 }
-// ===================================================================================
+// ==================================
+function openModal(card) {
+  const modalContent = document.getElementById("modal-content");
+  
+  modalContent.innerHTML = `
+    <h1 class="text-3xl font-bold text-slate-800 mb-2">${card.title}</h1>
+    
+    <div class="flex items-center gap-3 mb-6">
+      <span class="bg-emerald-500 text-white px-4 py-1 rounded-full text-sm capitalize">${card.status}</span>
+      <p class="text-slate-500 text-sm">Opened by <span class="font-semibold">${card.author}</span> • ${card.createdAt}</p>
+    </div>
+
+    <div class="flex gap-2 mb-6">
+      <span class="bg-red-50 text-red-500 px-3 py-1 rounded border border-red-100 text-xs font-bold uppercase">🐞 BUG</span>
+      <span class="bg-orange-50 text-orange-400 px-3 py-1 rounded border border-orange-100 text-xs font-bold uppercase">💡 HELP WANTED</span>
+    </div>
+
+    <p class="text-slate-600 mb-8 leading-relaxed">
+      ${card.description}
+    </p>
+
+    <div class="bg-slate-50 p-6 rounded-xl flex justify-between items-center">
+      <div>
+        <p class="text-slate-400 text-xs mb-1 uppercase tracking-wider">Assignee:</p>
+        <p class="font-bold text-slate-800">${card.author}</p>
+      </div>
+      <div class="text-right">
+        <p class="text-slate-400 text-xs mb-1 uppercase tracking-wider">Priority:</p>
+        <span class="bg-red-500 text-white px-4 py-1 rounded text-xs font-bold uppercase">${card.priority}</span>
+      </div>
+    </div>
+  `;
+
+ 
+  document.getElementById("issue_modal").showModal();
+}
