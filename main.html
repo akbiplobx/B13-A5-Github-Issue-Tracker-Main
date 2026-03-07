@@ -45,10 +45,11 @@
    </nav>
  <!-- btn -->
     <section class="w-8/12 mx-auto bg-white p-6 m-10 rounded-lg border border-gray-100 shadow-sm flex items-center gap-2">
-  <button class="btn btn-primary h-10 w-24 bg-[#4c00ff] hover:bg-[#3a00cc] border-none text-white normal-case px-6 min-h-0 h-10 rounded-md">All</button>
-  <button class="btn btn-ghost h-10 w-24 border border-gray-200 hover:bg-gray-50 text-slate-500 font-normal normal-case px-6 min-h-0 h-10 rounded-md">Open</button>
-  <button class="btn btn-ghost h-10 w-24 border border-gray-200 hover:bg-gray-50 text-slate-500 font-normal normal-case px-6 min-h-0 h-10 rounded-md">Closed</button>
+  <button onclick="showAll()" class="btn btn-primary h-10 w-24 bg-[#4c00ff] hover:bg-[#3a00cc] border-none text-white normal-case px-6 min-h-0 h-10 rounded-md">All</button>
+  <button onclick="showOpen()" class="btn btn-ghost h-10 w-24 border border-gray-200 hover:bg-gray-50 text-slate-500 font-normal normal-case px-6 min-h-0 h-10 rounded-md">Open</button>
+  <button onclick="showClosed()" class="btn btn-ghost h-10 w-24 border border-gray-200 hover:bg-gray-50 text-slate-500 font-normal normal-case px-6 min-h-0 h-10 rounded-md">Closed</button>
 </section>
+<!-- btn end -->
 
 <!-- track header -->
  <section class="w-8/12 mx-auto flex flex-col md:flex-row md:items-center justify-between p-6 bg-white border border-gray-100 rounded-t-xl">
@@ -78,29 +79,22 @@
 </section>
 
 <!-- track card -->
- 
+ <section id="cardContainer" class="w-8/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-1">
+  </section>
+
  <section class=" w-8/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-1">
   
+   <!-- card start -->
   <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-    
-    <div class="h-1 w-full bg-emerald-400 rounded-t-lg"></div>
-
-    <div class="p-4 flex flex-col flex-grow">
+         <div class="p-4 flex flex-col flex-grow">
       <div class="flex justify-between items-start mb-2">
         <div class="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 text-xs">
-          <i class="fa-solid fa-circle-check"></i>
+          <img src="./image/Open-Status.png" alt="">
         </div>
         <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-red-50 text-red-500 uppercase">High</span>
       </div>
-
-      <h3 class="text-sm font-bold text-gray-800 leading-tight mb-1">
-        Fix Navigation Menu On Mobile Devices
-      </h3>
-      
-      <p class="text-xs text-gray-500 line-clamp-2 mb-3">
-        The navigation menu doesn't collapse properly on mobile devices...
-      </p>
-
+      <h3 class="text-sm font-bold text-gray-800 leading-tight mb-1">Fix Navigation Men On Mobile Devices </h3>
+      <p class="text-xs text-gray-500 line-clamp-2 mb-3">The navigation menu doesn't collapse properly on mobile devices...</p>
       <div class="flex flex-wrap gap-1 mb-4">
         <span class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-red-50 text-red-500 text-[9px] font-bold border border-red-100">
           <i class="fa-solid fa-bug text-[8px]"></i> BUG
@@ -109,21 +103,24 @@
           <i class="fa-solid fa-circle-info text-[8px]"></i> HELP WANTED
         </span>
       </div>
-
       <div class="mt-auto pt-3 border-t border-gray-50 text-[10px] text-gray-400">
         <p>#1 by john_doe</p>
         <p>1/15/2024</p>
       </div>
     </div>
   </div>
-  
-  </section>
-<!--  -->
-<!-- ================================ -->
- <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+  <!-- card end -->
+    </section>
+    <!-- ========================================= -->
 
-  </section>
-   <!-- ================================= -->
+
+<div id="card-container"></div>
+
+
+
+
+    <!-- ========================================= -->
+
     <script src="./script.js"></script>
 </body>
 </html>
