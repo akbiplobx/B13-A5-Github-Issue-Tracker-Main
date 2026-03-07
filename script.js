@@ -116,7 +116,7 @@ function showClosed(){
   const filtered = allIssues.filter(card => card.status === "closed");
   displayCards(filtered);
 }
-// ==================================
+// =============Popup=====================
 function openModal(card) {
   const modalContent = document.getElementById("modal-content");
   
@@ -149,6 +149,19 @@ function openModal(card) {
     </div>
   `;
 
- 
-  document.getElementById("issue_modal").showModal();
+   document.getElementById("issue_modal").showModal();
 }
+
+// ===============search function=============
+
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("keyup", (e) => {
+    const searchText = e.target.value.toLowerCase();  
+    const filteredIssues = allIssues.filter(issue => {
+        return (
+            issue.title.toLowerCase().includes(searchText) || 
+            issue.description.toLowerCase().includes(searchText)
+        );
+    });
+    displayCards(filteredIssues);
+});
