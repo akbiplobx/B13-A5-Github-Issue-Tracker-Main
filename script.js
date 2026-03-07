@@ -11,7 +11,6 @@ function login() {
 // login function end
 // ================================================================================
 const container = document.getElementById("cardContainer");
-
 let allIssues = [];
 
 // API load
@@ -37,10 +36,16 @@ function displayCards(cards){
       ? "./image/Open-Status.png"
       : "./image/Closed-Status.png";
 
+    const statusColor = card.status === "closed"
+      ? "bg-purple-400"
+      : "bg-emerald-400";
 
     div.innerHTML = `
     <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-      <div class="p-4 flex flex-col flex-grow">
+
+       <div class="h-1 w-full ${statusColor} rounded-t-lg"></div>
+    <div class="p-4 flex flex-col flex-grow">
+    
 
         <div class="flex justify-between items-start mb-2">
           <div class="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 text-xs">

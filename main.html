@@ -16,8 +16,8 @@
 </head>
 <body class="bg-[#f8f9fb]">
   <!-- search section -->
-   <nav class="shadow bg-white">
-    <section class="flex justify-between p-5 w-11/12 mx-auto ">
+   <nav class="shadow bg-white ">
+    <section class="flex justify-between p-5 w-11/12 mx-auto flex-col md:flex-row gap-4 md:gap-0 ">
       <div class="flex gap-2 items-center">
         <img src="./image/github-logo.png" alt="" class="w-8 h-8 ">
         <h2 class="text-2xl font-bold">GitHub Issues Tracker</h2>
@@ -44,7 +44,7 @@
     </section>
    </nav>
  <!-- btn -->
-    <section class="w-8/12 mx-auto bg-white p-6 m-10 rounded-lg border border-gray-100 shadow-sm flex items-center gap-2">
+    <section class="w-11/12 md:w-8/12 mx-auto bg-white p-6 m-10 rounded-lg border border-gray-100 shadow-sm flex flex-col md:flex-row items-center gap-2">
   <button onclick="showAll()" class="btn btn-primary h-10 w-24 bg-[#4c00ff] hover:bg-[#3a00cc] border-none text-white normal-case px-6 min-h-0 h-10 rounded-md">All</button>
   <button onclick="showOpen()" class="btn btn-ghost h-10 w-24 border border-gray-200 hover:bg-gray-50 text-slate-500 font-normal normal-case px-6 min-h-0 h-10 rounded-md">Open</button>
   <button onclick="showClosed()" class="btn btn-ghost h-10 w-24 border border-gray-200 hover:bg-gray-50 text-slate-500 font-normal normal-case px-6 min-h-0 h-10 rounded-md">Closed</button>
@@ -85,8 +85,9 @@
  <section class=" w-8/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-1">
   
    <!-- card start -->
-  <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-         <div class="p-4 flex flex-col flex-grow">
+  <!-- <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+         <div class="h-1 w-full bg-emerald-400 rounded-t-lg"></div>
+    <div class="p-4 flex flex-col flex-grow">
       <div class="flex justify-between items-start mb-2">
         <div class="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 text-xs">
           <img src="./image/Open-Status.png" alt="">
@@ -108,7 +109,7 @@
         <p>1/15/2024</p>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- card end -->
     </section>
     <!-- ========================================= -->
