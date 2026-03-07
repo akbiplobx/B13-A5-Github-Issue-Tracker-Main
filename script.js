@@ -20,8 +20,8 @@ fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
 
     allIssues = data.data; // API থেকে issues
     displayCards(allIssues);
-
-  });
+    setActive("allBtn");
+  }); 
 //   ======================
 
 function displayCards(cards){
@@ -79,19 +79,32 @@ function displayCards(cards){
   });
 }
 
+// --------------
+const buttons = document.querySelectorAll(".btn");
 
+function setActive(btnId){
+  buttons.forEach(btn => btn.classList.remove("active-btn"));
+  document.getElementById(btnId).classList.add("active-btn");
+}
+
+// ----------
+
+// ----------
 // button functions
 
 function showAll(){
+  setActive("allBtn");
   displayCards(allIssues);
 }
 
 function showOpen(){
+  setActive("openBtn");
   const filtered = allIssues.filter(card => card.status === "open");
   displayCards(filtered);
 }
 
 function showClosed(){
+  setActive("closedBtn");
   const filtered = allIssues.filter(card => card.status === "closed");
   displayCards(filtered);
 }

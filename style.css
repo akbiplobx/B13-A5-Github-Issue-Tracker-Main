@@ -1,0 +1,20 @@
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #555;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.btn:hover {
+  background: #eee;
+}
+
+/* Active button style */
+.active-btn {
+  background: #4c00ff;
+  color: white;
+  border: none;
+}
