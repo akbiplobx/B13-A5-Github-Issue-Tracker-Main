@@ -7,12 +7,6 @@
   cursor: pointer;
 }
 
-/* Hover effect */
-.btn:hover {
-  background: #eee;
-}
-
-/* Active button style */
 .active-btn {
   background: #4c00ff;
   color: white;

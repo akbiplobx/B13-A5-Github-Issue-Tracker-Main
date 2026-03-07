@@ -64,8 +64,16 @@ function displayCards(cards){
         <p class="text-xs text-gray-500 line-clamp-2 mb-3">
           ${card.description}
         </p>
-
-        <div class="mt-auto pt-3 border-t border-gray-50 text-[10px] text-gray-400">
+        <div class="flex flex-wrap gap-1 mb-4">
+        <span class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-red-50 text-red-500 text-[9px] font-bold border border-red-100">
+          <i class="fa-solid fa-bug text-[8px]"></i> BUG
+        </span>
+        <span class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-orange-50 text-orange-400 text-[9px] font-bold border border-orange-100">
+          <i class="fa-solid fa-circle-info text-[8px]"></i> HELP WANTED
+        </span>
+      </div>
+       <hr class="h-px bg-gray-200 border-0 ">
+        <div class="mt-auto pt-2 border-t border-gray-50 text-[10px] text-gray-400">
           <p>#${card.id} by ${card.author}</p>
           <p>${card.createdAt}</p>
         </div>
@@ -79,17 +87,13 @@ function displayCards(cards){
   });
 }
 
-// --------------
+// btn active
 const buttons = document.querySelectorAll(".btn");
-
 function setActive(btnId){
   buttons.forEach(btn => btn.classList.remove("active-btn"));
   document.getElementById(btnId).classList.add("active-btn");
 }
 
-// ----------
-
-// ----------
 // button functions
 
 function showAll(){
