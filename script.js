@@ -11,19 +11,40 @@ function login() {
 // login function end
 // ================================================================================
 const container = document.getElementById("cardContainer");
+const Spinner = document.getElementById("Spinner");
 let allIssues = [];
 
+
+// Loading
+function showLoading() {
+  Spinner.classList.remove("hidden");
+  container.innerHTML = "";
+}
+
+function hideLoading() {
+  Spinner.classList.add("hidden");
+}
+//   ======================
+
+
 // API load
+showLoading();
 fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
   .then(res => res.json())
   .then(data => {
 
-    allIssues = data.data; // API থেকে issues
+    allIssues = data.data; 
     displayCards(allIssues);
     setActive("allBtn");
-  }); 
-//   ======================
+      hideLoading();
+  }) 
+  .catch(error => {
+    console.log("Error:", error);
+    hideLoading();
+  });
 
+
+// ===============================
 function displayCards(cards){
 
   container.innerHTML = "";
