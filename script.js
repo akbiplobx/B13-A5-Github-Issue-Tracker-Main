@@ -146,6 +146,11 @@ function showClosed(){
 }
 // =============Popup=====================
 function openModal(card) {
+  const date = new Date(card.createdAt);
+  const formattedDate =
+    date.getDate() + "/" +
+    (date.getMonth() + 1) + "/" +
+    date.getFullYear();
   const modalContent = document.getElementById("modal-content");
   
   modalContent.innerHTML = `
@@ -153,7 +158,7 @@ function openModal(card) {
     
     <div class="flex items-center gap-3 mb-6">
       <span class="bg-emerald-500 text-white px-4 py-1 rounded-full text-sm capitalize">${card.status}</span>
-      <p class="text-slate-500 text-sm">Opened by <span class="font-semibold">${card.author}</span> • ${card.createdAt}</p>
+      <p class="text-slate-500 text-sm">Opened by <span class="font-semibold">${card.author}</span> • ${formattedDate}</p>
     </div>
 
     <div class="flex gap-2 mb-6">
