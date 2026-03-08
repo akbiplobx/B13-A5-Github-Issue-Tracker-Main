@@ -12,6 +12,7 @@ function login() {
 // ================================================================================
 const container = document.getElementById("cardContainer");
 const Spinner = document.getElementById("Spinner");
+
 let allIssues = [];
 
 
@@ -65,6 +66,12 @@ function displayCards(cards){
       ? "bg-purple-400"
       : "bg-emerald-400";
 
+    const date = new Date(card.createdAt);
+  const formattedDate =
+    date.getDate() + "/" +
+    (date.getMonth() + 1) + "/" +
+    date.getFullYear();
+
     div.innerHTML = `
     <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
 
@@ -100,7 +107,7 @@ function displayCards(cards){
        <hr class="h-px bg-gray-200 border-0 ">
         <div class="mt-auto pt-2 border-t border-gray-50 text-[10px] text-gray-400">
           <p>#${card.id} by ${card.author}</p>
-          <p>${card.createdAt}</p>
+          <p>${formattedDate}</p>
         </div>
 
       </div>
